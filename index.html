@@ -1,0 +1,1454 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Mahmoud Al-Husseini Kamel — Brand Identity Designer &amp; Visual Identity Specialist</title>
+<meta name="description" content="Portfolio of Mahmoud Al-Husseini Kamel — Brand Identity Designer & Visual Identity Specialist. Crafting cohesive, strategic and memorable visual identities from concept to final execution.">
+<meta name="theme-color" content="#0A0A0C">
+<meta property="og:title" content="Mahmoud Al-Husseini Kamel — Brand Identity Designer">
+<meta property="og:description" content="15+ complete brand systems · Adobe Creative Suite expert · Generative AI workflow.">
+<meta property="og:image" content="https://i.postimg.cc/d3KpCngS/Gemini-Generated-Image-milss6milss6mils.jpg">
+<meta property="og:type" content="website">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230A0A0C'/%3E%3Ctext x='32' y='43' font-family='Georgia,serif' font-size='32' font-weight='700' fill='%23C9A86A' text-anchor='middle'%3EM.%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@500;600;700;800&family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+
+<style>
+/* ============================================================
+   MAHMOUD AL-HUSSEINI KAMEL — PORTFOLIO
+   Dark Luxury Editorial / Agency Aesthetic
+   Single-file build: HTML5 + CSS3 + Vanilla JS
+   ============================================================ */
+
+/* ---------- Design tokens ---------- */
+:root{
+  --bg:#0A0A0C;
+  --surface:#141418;
+  --surface-2:#1A1A20;
+  --ink:#F5F5F7;
+  --ink-dim:rgba(245,245,247,.64);
+  --ink-faint:rgba(245,245,247,.40);
+  --gold:#C9A86A;
+  --gold-deep:#B08F52;
+  --gold-bright:#DCC08D;
+  --gold-soft:rgba(201,168,106,.14);
+  --glass:rgba(255,255,255,.04);
+  --line:rgba(255,255,255,.08);
+  --line-strong:rgba(255,255,255,.16);
+  --shadow:0 24px 60px -24px rgba(0,0,0,.6);
+  --font-display:'Syne',Georgia,serif;
+  --font-body:'Plus Jakarta Sans','Segoe UI',sans-serif;
+  --radius:20px;
+  --radius-sm:12px;
+  --maxw:1240px;
+  --nav-h:78px;
+  --ease:cubic-bezier(.22,.61,.36,1);
+}
+
+/* ---------- Reset & base ---------- */
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;scroll-padding-top:calc(var(--nav-h) + 18px)}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+body{
+  background:var(--bg);
+  color:var(--ink);
+  font-family:var(--font-body);
+  font-size:16px;
+  line-height:1.7;
+  -webkit-font-smoothing:antialiased;
+  overflow-x:clip;
+}
+img{max-width:100%;height:auto;display:block}
+a{color:inherit;text-decoration:none}
+button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
+ul{list-style:none}
+::selection{background:var(--gold);color:#0A0A0C}
+::-webkit-scrollbar{width:10px}
+::-webkit-scrollbar-track{background:var(--bg)}
+::-webkit-scrollbar-thumb{background:#26262D;border-radius:8px;border:2px solid var(--bg)}
+::-webkit-scrollbar-thumb:hover{background:#3A3A44}
+
+/* Film-grain overlay */
+body::after{
+  content:"";position:fixed;inset:0;z-index:3;pointer-events:none;opacity:.035;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2'/%3E%3C/filter%3E%3Crect width='140' height='140' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+/* ---------- Utilities ---------- */
+.container{width:100%;max-width:var(--maxw);margin-inline:auto;padding-inline:clamp(20px,4vw,40px)}
+.gold{color:var(--gold)}
+.gold-grad{
+  background:linear-gradient(120deg,var(--gold-bright) 0%,var(--gold) 45%,var(--gold-deep) 100%);
+  -webkit-background-clip:text;background-clip:text;color:transparent;
+}
+.eyebrow{
+  display:inline-flex;align-items:center;gap:12px;
+  font-size:.76rem;font-weight:600;letter-spacing:.3em;text-transform:uppercase;color:var(--gold);
+}
+.eyebrow::before{content:"";width:36px;height:1px;background:var(--gold);flex:none}
+.sec-title{
+  font-family:var(--font-display);font-weight:700;text-transform:uppercase;
+  font-size:clamp(1.9rem,4.4vw,3.2rem);line-height:1.06;letter-spacing:.01em;margin-top:16px;
+}
+.sec-sub{color:var(--ink-dim);max-width:660px;margin-top:14px;font-size:1.02rem}
+.sec-head{margin-bottom:clamp(34px,5vw,56px)}
+section{position:relative;padding:clamp(72px,9vw,120px) 0}
+.visually-hidden{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+.skip-link{position:fixed;top:-60px;left:16px;z-index:300;background:var(--gold);color:#0A0A0C;padding:10px 18px;border-radius:8px;font-weight:600;transition:top .3s}
+.skip-link:focus{top:12px}
+
+/* Scroll-reveal */
+.reveal{opacity:0;transform:translateY(30px);transition:opacity .85s var(--ease),transform .85s var(--ease);transition-delay:var(--d,0s)}
+.reveal.in{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){
+  .reveal{opacity:1;transform:none;transition:none}
+  *{animation-duration:.01ms!important;animation-iteration-count:1!important}
+}
+
+/* ---------- Buttons ---------- */
+.btn{
+  display:inline-flex;align-items:center;justify-content:center;gap:10px;
+  padding:15px 30px;border-radius:999px;border:1px solid transparent;
+  font-weight:600;font-size:.95rem;letter-spacing:.03em;
+  transition:transform .35s var(--ease),box-shadow .35s var(--ease),border-color .35s,color .35s,background .35s;
+  will-change:transform;
+}
+.btn svg{width:17px;height:17px;flex:none}
+.btn-gold{
+  background:linear-gradient(135deg,#D9BA82 0%,var(--gold) 50%,#AE8D4F 100%);
+  color:#16100A;box-shadow:0 10px 28px -14px rgba(201,168,106,.55);
+}
+.btn-gold:hover{transform:translateY(-3px);box-shadow:0 18px 40px -14px rgba(201,168,106,.6)}
+.btn-ghost{border-color:var(--line-strong);color:var(--ink);background:rgba(255,255,255,.03)}
+.btn-ghost:hover{border-color:var(--gold);color:var(--gold);transform:translateY(-3px)}
+
+/* ---------- Scroll progress ---------- */
+.scroll-progress{position:fixed;top:0;left:0;right:0;height:2px;z-index:160;background:transparent}
+.scroll-progress i{display:block;height:100%;width:100%;background:linear-gradient(90deg,var(--gold-deep),var(--gold-bright));transform-origin:0 50%;transform:scaleX(0)}
+
+/* ---------- Navbar ---------- */
+.navbar{
+  position:fixed;top:0;left:0;right:0;z-index:150;height:var(--nav-h);
+  display:flex;align-items:center;
+  border-bottom:1px solid transparent;
+  transition:background .4s,border-color .4s,backdrop-filter .4s;
+}
+.navbar.scrolled{
+  background:rgba(10,10,12,.72);
+  -webkit-backdrop-filter:blur(18px);backdrop-filter:blur(18px);
+  border-bottom-color:var(--line);
+}
+.nav-inner{display:flex;align-items:center;justify-content:space-between;gap:20px;width:100%}
+.brand{font-family:var(--font-display);font-weight:800;font-size:1.28rem;letter-spacing:.06em;display:inline-flex;align-items:baseline}
+.brand .dot{color:var(--gold)}
+.nav-links{display:flex;align-items:center;gap:clamp(18px,2.6vw,36px)}
+.nav-links a{
+  position:relative;font-size:.9rem;font-weight:500;color:var(--ink-dim);
+  letter-spacing:.04em;padding:6px 0;transition:color .3s;
+}
+.nav-links a::after{
+  content:"";position:absolute;left:0;bottom:0;height:1px;width:100%;
+  background:var(--gold);transform:scaleX(0);transform-origin:0 50%;transition:transform .35s var(--ease);
+}
+.nav-links a:hover,.nav-links a.active{color:var(--ink)}
+.nav-links a:hover::after,.nav-links a.active::after{transform:scaleX(1)}
+.nav-cta{padding:11px 24px;font-size:.88rem}
+.nav-toggle{display:none;width:44px;height:44px;border:1px solid var(--line-strong);border-radius:12px;position:relative;z-index:120}
+.nav-toggle span{position:absolute;left:12px;right:12px;height:2px;background:var(--ink);border-radius:2px;transition:transform .35s var(--ease),top .35s var(--ease),opacity .3s}
+.nav-toggle span:nth-child(1){top:16px}
+.nav-toggle span:nth-child(2){top:26px}
+.nav-toggle.open span:nth-child(1){top:21px;transform:rotate(45deg)}
+.nav-toggle.open span:nth-child(2){top:21px;transform:rotate(-45deg)}
+
+/* Mobile menu */
+.mobile-menu{
+  position:fixed;inset:var(--nav-h) 0 auto 0;z-index:140;
+  background:rgba(12,12,15,.94);
+  -webkit-backdrop-filter:blur(22px);backdrop-filter:blur(22px);
+  border-bottom:1px solid var(--line);
+  padding:14px clamp(20px,4vw,40px) 26px;
+  display:none;flex-direction:column;gap:4px;
+  transform:translateY(-12px);opacity:0;transition:transform .35s var(--ease),opacity .35s;
+}
+.mobile-menu.open{transform:none;opacity:1}
+.mobile-menu a{padding:14px 6px;font-size:1.05rem;font-weight:600;border-bottom:1px solid var(--line);display:flex;justify-content:space-between;align-items:center;color:var(--ink)}
+.mobile-menu a:last-of-type{border-bottom:0}
+.mobile-menu .btn{margin-top:14px;justify-content:center}
+body.menu-open .mobile-menu{display:flex;transform:none;opacity:1}
+
+/* ---------- Hero ---------- */
+.hero{
+  min-height:100svh;display:flex;align-items:center;
+  padding-top:calc(var(--nav-h) + 30px);padding-bottom:40px;overflow:hidden;
+}
+.hero::before{
+  content:"";position:absolute;top:-28%;right:-14%;width:58vw;height:58vw;max-width:900px;max-height:900px;
+  background:radial-gradient(circle,rgba(201,168,106,.17) 0%,rgba(201,168,106,.05) 42%,transparent 68%);
+  filter:blur(30px);pointer-events:none;
+}
+.hero::after{
+  content:"";position:absolute;bottom:-30%;left:-18%;width:44vw;height:44vw;max-width:700px;max-height:700px;
+  background:radial-gradient(circle,rgba(245,245,247,.05) 0%,transparent 65%);
+  filter:blur(30px);pointer-events:none;
+}
+.hero-inner{position:relative;z-index:2;width:100%}
+.hero-eyebrow{margin-bottom:26px}
+.hero-name{
+  font-family:var(--font-display);font-weight:800;text-transform:uppercase;
+  font-size:clamp(1.2rem,7.8vw,6.4rem);line-height:.98;letter-spacing:.005em;
+}
+.hero-name .line{display:block;white-space:nowrap}
+.hero-name .outline{
+  color:transparent;-webkit-text-stroke:1.5px rgba(245,245,247,.42);
+}
+.hero-role{
+  display:flex;align-items:center;gap:16px;margin-top:26px;flex-wrap:wrap;
+  font-size:clamp(.86rem,1.6vw,1.05rem);font-weight:600;letter-spacing:.22em;text-transform:uppercase;color:var(--gold);
+}
+.hero-role::before{content:"";width:52px;height:1px;background:var(--gold);flex:none}
+.hero-tagline{
+  margin-top:24px;max-width:640px;color:var(--ink-dim);
+  font-size:clamp(1rem,1.9vw,1.14rem);font-weight:300;line-height:1.8;
+}
+.hero-tagline q{quotes:"“" "”";font-style:italic}
+.hero-actions{display:flex;gap:16px;margin-top:38px;flex-wrap:wrap}
+.metrics{
+  display:flex;flex-wrap:wrap;gap:clamp(16px,3.4vw,44px);
+  margin-top:clamp(44px,6vw,70px);padding-top:28px;border-top:1px solid var(--line);
+}
+.metric{display:flex;align-items:center;gap:14px;min-width:0}
+.metric .m-ico{
+  width:42px;height:42px;flex:none;border-radius:12px;display:grid;place-items:center;
+  border:1px solid var(--line);background:var(--glass);color:var(--gold);
+}
+.metric .m-ico svg{width:20px;height:20px}
+.metric b{font-family:var(--font-display);font-size:clamp(1.05rem,2vw,1.45rem);font-weight:700;letter-spacing:.02em;display:block;line-height:1.25}
+.metric span{font-size:.78rem;letter-spacing:.16em;text-transform:uppercase;color:var(--ink-faint)}
+.scroll-hint{
+  position:absolute;left:50%;bottom:22px;transform:translateX(-50%);
+  display:flex;flex-direction:column;align-items:center;gap:10px;
+  font-size:.7rem;letter-spacing:.3em;text-transform:uppercase;color:var(--ink-faint);z-index:2;
+}
+.scroll-hint i{width:1px;height:44px;background:var(--line-strong);position:relative;overflow:hidden;display:block}
+.scroll-hint i::after{content:"";position:absolute;top:-40%;left:0;width:100%;height:40%;background:var(--gold);animation:drip 2.2s var(--ease) infinite}
+@keyframes drip{0%{top:-40%}70%,100%{top:110%}}
+
+/* ---------- Brand marquee ---------- */
+.marquee{border-block:1px solid var(--line);padding:22px 0;overflow:hidden;position:relative;background:rgba(255,255,255,.014)}
+.marquee-track{display:flex;align-items:center;gap:56px;width:max-content;animation:marquee 34s linear infinite;will-change:transform}
+.marquee:hover .marquee-track{animation-play-state:paused}
+@keyframes marquee{to{transform:translateX(-50%)}}
+.mq-item{font-family:var(--font-display);font-weight:700;font-size:1.06rem;letter-spacing:.24em;text-transform:uppercase;color:rgba(245,245,247,.30);white-space:nowrap}
+.mq-dot{width:7px;height:7px;flex:none;background:var(--gold);transform:rotate(45deg);opacity:.65}
+
+/* ---------- About ---------- */
+.about-grid{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:clamp(28px,4vw,64px);align-items:start}
+.facts-card{
+  border:1px solid var(--line);border-radius:var(--radius);background:linear-gradient(160deg,rgba(255,255,255,.045),rgba(255,255,255,.015));
+  -webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px);
+  padding:clamp(22px,3vw,34px);box-shadow:var(--shadow);
+}
+.facts-card h3{font-family:var(--font-display);font-size:1.15rem;letter-spacing:.08em;text-transform:uppercase;margin-bottom:20px;display:flex;align-items:center;gap:12px}
+.facts-card h3 svg{width:20px;height:20px;color:var(--gold)}
+.fact{display:flex;justify-content:space-between;gap:16px;padding:13px 0;border-top:1px solid var(--line);font-size:.94rem}
+.fact:first-of-type{border-top:0}
+.fact dt{color:var(--ink-faint);letter-spacing:.06em;text-transform:uppercase;font-size:.76rem;font-weight:600;padding-top:3px;flex:none}
+.fact dd{color:var(--ink);text-align:right;font-weight:500}
+.about-copy p{color:var(--ink-dim);margin-bottom:18px;font-size:1.04rem}
+.about-copy p strong{color:var(--ink);font-weight:600}
+.about-copy .lead{font-size:clamp(1.08rem,2vw,1.22rem);color:var(--ink);font-weight:400}
+.about-list{margin-top:26px;display:grid;gap:12px}
+.about-list li{display:flex;gap:14px;align-items:flex-start;color:var(--ink-dim);font-size:.98rem}
+.about-list svg{width:18px;height:18px;color:var(--gold);flex:none;margin-top:4px}
+.about-list b{color:var(--ink);font-weight:600}
+
+/* ---------- Works ---------- */
+.works{background:linear-gradient(180deg,transparent 0%,rgba(255,255,255,.014) 30%,transparent 100%)}
+.filter-bar{
+  display:flex;gap:10px;flex-wrap:wrap;margin-bottom:clamp(28px,4vw,44px);
+}
+.filter-btn{
+  padding:11px 22px;border-radius:999px;border:1px solid var(--line-strong);
+  font-size:.86rem;font-weight:600;letter-spacing:.05em;color:var(--ink-dim);
+  transition:color .3s,border-color .3s,background .3s,transform .3s var(--ease);
+}
+.filter-btn:hover{color:var(--ink);border-color:var(--gold);transform:translateY(-2px)}
+.filter-btn.is-active{background:var(--gold);border-color:var(--gold);color:#16100A}
+.works-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:clamp(20px,2.6vw,30px)}
+.project-card{
+  position:relative;border:1px solid var(--line);border-radius:var(--radius);
+  background:var(--surface);overflow:hidden;cursor:pointer;outline-offset:4px;
+  transition:transform .5s var(--ease),border-color .5s,box-shadow .5s;
+  animation:cardIn .5s var(--ease) both;
+}
+@keyframes cardIn{from{opacity:0;transform:translateY(16px) scale(.985)}to{opacity:1;transform:none}}
+.project-card:hover,.project-card:focus-visible{transform:translateY(-8px);border-color:rgba(201,168,106,.45);box-shadow:0 30px 60px -26px rgba(0,0,0,.75),0 0 0 1px rgba(201,168,106,.12)}
+.project-card.is-hidden{display:none}
+.project-media{position:relative;aspect-ratio:4/3;overflow:hidden;background:var(--surface-2)}
+.project-media img{
+  width:100%;height:100%;object-fit:cover;
+  transition:transform 1s var(--ease),filter .6s;
+  filter:saturate(.92);
+}
+.project-card:hover .project-media img{transform:scale(1.06);filter:saturate(1.05)}
+.project-media::after{
+  content:"";position:absolute;inset:0;
+  background:linear-gradient(180deg,rgba(10,10,12,0) 42%,rgba(10,10,12,.72) 100%);
+  opacity:.9;transition:opacity .5s;
+}
+.project-num{
+  position:absolute;top:16px;left:18px;z-index:2;
+  font-family:var(--font-display);font-weight:700;font-size:.92rem;letter-spacing:.18em;
+  color:rgba(245,245,247,.85);background:rgba(10,10,12,.55);
+  -webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px);
+  border:1px solid var(--line);border-radius:999px;padding:7px 14px;
+}
+.project-view{
+  position:absolute;right:18px;bottom:18px;z-index:2;
+  display:inline-flex;align-items:center;gap:8px;
+  font-size:.8rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:#16100A;
+  background:var(--gold);border-radius:999px;padding:10px 18px;
+  opacity:0;transform:translateY(10px);transition:opacity .4s var(--ease),transform .4s var(--ease);
+}
+.project-view svg{width:14px;height:14px}
+.project-card:hover .project-view,.project-card:focus-visible .project-view{opacity:1;transform:none}
+.project-info{padding:22px 24px 26px;display:flex;flex-direction:column;gap:7px}
+.project-cat{font-size:.72rem;font-weight:600;letter-spacing:.24em;text-transform:uppercase;color:var(--gold)}
+.project-info h3{font-family:var(--font-display);font-size:clamp(1.3rem,2.4vw,1.7rem);font-weight:700;letter-spacing:.04em;text-transform:uppercase}
+.project-info p{color:var(--ink-dim);font-size:.95rem}
+.works-more{
+  margin-top:clamp(30px,4vw,44px);display:flex;justify-content:center;
+}
+@media (max-width:880px){.works-grid{grid-template-columns:1fr}}
+
+/* ---------- Expertise bento ---------- */
+.bento{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));gap:clamp(16px,2vw,24px)}
+.b-cell{
+  grid-column:span 6;position:relative;overflow:hidden;
+  border:1px solid var(--line);border-radius:var(--radius);
+  background:linear-gradient(165deg,rgba(255,255,255,.045),rgba(255,255,255,.012));
+  padding:clamp(24px,3vw,36px);
+  transition:transform .45s var(--ease),border-color .45s;
+}
+.b-cell:hover{transform:translateY(-5px);border-color:rgba(201,168,106,.4)}
+.b-cell.wide{grid-column:span 7}
+.b-cell.narrow{grid-column:span 5}
+.b-cell::before{
+  content:"";position:absolute;top:-70px;right:-70px;width:190px;height:190px;border-radius:50%;
+  background:radial-gradient(circle,rgba(201,168,106,.14),transparent 70%);pointer-events:none;
+}
+.b-icon{
+  width:52px;height:52px;border-radius:14px;display:grid;place-items:center;margin-bottom:22px;
+  border:1px solid rgba(201,168,106,.35);background:var(--gold-soft);color:var(--gold);
+}
+.b-icon svg{width:24px;height:24px}
+.b-cell h3{font-family:var(--font-display);font-size:1.28rem;letter-spacing:.05em;text-transform:uppercase;margin-bottom:8px}
+.b-cell .b-sub{color:var(--ink-faint);font-size:.85rem;letter-spacing:.06em;margin-bottom:20px}
+.chips{display:flex;flex-wrap:wrap;gap:9px}
+.chip{
+  font-size:.82rem;font-weight:500;color:var(--ink-dim);
+  border:1px solid var(--line-strong);border-radius:999px;padding:8px 15px;
+  transition:color .3s,border-color .3s,background .3s;
+}
+.chip:hover{color:var(--gold);border-color:rgba(201,168,106,.5);background:var(--gold-soft)}
+.tools{display:grid;gap:18px}
+.tool-top{display:flex;justify-content:space-between;align-items:baseline;gap:12px;margin-bottom:9px}
+.tool-top b{font-weight:600;font-size:.96rem}
+.tool-top em{font-style:normal;font-size:.74rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--gold)}
+.meter{height:5px;border-radius:99px;background:rgba(255,255,255,.07);overflow:hidden}
+.meter i{display:block;height:100%;width:var(--w,60%);border-radius:99px;background:linear-gradient(90deg,var(--gold-deep),var(--gold-bright));transform-origin:0 50%;transform:scaleX(0);transition:transform 1.2s var(--ease) .2s}
+.in .meter i{transform:scaleX(1)}
+.b-cell.ai p{color:var(--ink-dim);font-size:.96rem;margin-bottom:20px}
+
+/* ---------- Credentials ---------- */
+.cred-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(16px,2vw,24px)}
+.cred-card{
+  border:1px solid var(--line);border-radius:var(--radius);padding:clamp(22px,2.6vw,30px);
+  background:var(--surface);display:flex;flex-direction:column;gap:14px;
+  transition:transform .45s var(--ease),border-color .45s;
+}
+.cred-card:hover{transform:translateY(-5px);border-color:rgba(201,168,106,.4)}
+.cred-ico{
+  width:48px;height:48px;border-radius:13px;display:grid;place-items:center;
+  border:1px solid rgba(201,168,106,.35);background:var(--gold-soft);color:var(--gold);
+}
+.cred-ico svg{width:22px;height:22px}
+.cred-card h3{font-family:var(--font-display);font-size:1.06rem;line-height:1.4;letter-spacing:.02em}
+.cred-card p{color:var(--ink-faint);font-size:.88rem;margin-top:auto}
+.cred-card .issuer{color:var(--gold);font-weight:600;font-size:.86rem}
+.lang-card{grid-column:span 3;display:flex;flex-wrap:wrap;align-items:center;gap:clamp(18px,3vw,40px);background:linear-gradient(120deg,rgba(201,168,106,.10),rgba(255,255,255,.02))}
+.lang-card .lang-ico{width:48px;height:48px;border-radius:13px;display:grid;place-items:center;border:1px solid rgba(201,168,106,.4);background:var(--gold-soft);color:var(--gold);flex:none}
+.lang-card .lang-ico svg{width:22px;height:22px}
+.lang-item b{display:block;font-family:var(--font-display);font-size:1.05rem;letter-spacing:.04em}
+.lang-item span{color:var(--ink-dim);font-size:.88rem}
+.lang-sep{width:1px;height:40px;background:var(--line-strong)}
+@media (max-width:1024px){.cred-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.lang-card{grid-column:span 2}}
+@media (max-width:640px){.cred-grid{grid-template-columns:1fr}.lang-card{grid-column:span 1}.lang-sep{display:none}.lang-card{gap:18px}}
+
+/* ---------- Contact ---------- */
+.contact-grid{display:grid;grid-template-columns:minmax(0,6fr) minmax(0,6fr);gap:clamp(30px,5vw,70px);align-items:start}
+.contact-copy .sec-title{margin-top:16px}
+.contact-note{color:var(--ink-dim);margin-top:20px;max-width:520px}
+.avail{
+  display:inline-flex;align-items:center;gap:10px;margin-top:26px;
+  font-size:.82rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--gold);
+  border:1px solid rgba(201,168,106,.35);background:var(--gold-soft);border-radius:999px;padding:10px 18px;
+}
+.avail i{width:8px;height:8px;border-radius:50%;background:var(--gold);flex:none;animation:pulse 2s infinite}
+@keyframes pulse{0%,100%{box-shadow:0 0 0 0 rgba(201,168,106,.5)}55%{box-shadow:0 0 0 7px rgba(201,168,106,0)}}
+.contact-cards{display:grid;gap:14px}
+.contact-card{
+  display:flex;align-items:center;gap:18px;
+  border:1px solid var(--line);border-radius:var(--radius-sm);background:var(--surface);
+  padding:18px 20px;transition:transform .4s var(--ease),border-color .4s,background .4s;
+}
+.contact-card:hover{transform:translateX(6px);border-color:rgba(201,168,106,.45);background:var(--surface-2)}
+.c-ico{width:46px;height:46px;flex:none;border-radius:12px;display:grid;place-items:center;border:1px solid var(--line);background:var(--glass);color:var(--gold)}
+.c-ico svg{width:20px;height:20px}
+.c-ico .be{font-family:var(--font-display);font-weight:800;font-size:1.05rem;letter-spacing:0}
+.c-body{min-width:0;flex:1}
+.c-body span{display:block;font-size:.72rem;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:var(--ink-faint)}
+.c-body b{display:block;font-weight:600;font-size:.98rem;color:var(--ink);overflow-wrap:anywhere}
+.c-arrow{color:var(--ink-faint);flex:none;transition:color .3s,transform .3s var(--ease)}
+.c-arrow svg{width:18px;height:18px}
+.contact-card:hover .c-arrow{color:var(--gold);transform:translate(3px,-3px)}
+.contact-actions{margin-top:30px}
+
+/* ---------- Footer ---------- */
+.footer{border-top:1px solid var(--line);padding:34px 0 40px}
+.footer-inner{display:flex;flex-wrap:wrap;gap:18px;align-items:center;justify-content:space-between}
+.footer .brand{font-size:1.1rem}
+.footer-nav{display:flex;gap:22px;flex-wrap:wrap}
+.footer-nav a{font-size:.85rem;color:var(--ink-faint);transition:color .3s}
+.footer-nav a:hover{color:var(--gold)}
+.footer small{width:100%;color:var(--ink-faint);font-size:.8rem;letter-spacing:.04em;border-top:1px solid var(--line);padding-top:20px;display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
+.back-top{display:inline-flex;align-items:center;gap:8px;color:var(--ink-dim);font-size:.82rem;font-weight:600;letter-spacing:.08em;transition:color .3s}
+.back-top:hover{color:var(--gold)}
+.back-top svg{width:14px;height:14px}
+
+/* ---------- Fullscreen Case-Study Lightbox ---------- */
+.lightbox{
+  position:fixed;inset:0;z-index:220;display:none;
+  align-items:flex-start;justify-content:center;
+  padding:clamp(10px,3vw,40px);
+}
+.lightbox.open{display:flex}
+.lb-backdrop{position:absolute;inset:0;background:rgba(6,6,8,.82);-webkit-backdrop-filter:blur(14px);backdrop-filter:blur(14px);animation:fadeIn .35s both}
+@keyframes fadeIn{from{opacity:0}to{opacity:1}}
+.lb-panel{
+  position:relative;z-index:2;width:min(960px,100%);max-height:100%;overflow-y:auto;
+  background:var(--surface);border:1px solid var(--line-strong);border-radius:var(--radius);
+  box-shadow:0 50px 120px -40px rgba(0,0,0,.9);
+  animation:lbIn .45s var(--ease) both;
+}
+@keyframes lbIn{from{opacity:0;transform:translateY(26px) scale(.985)}to{opacity:1;transform:none}}
+.lb-close{
+  position:sticky;top:0;margin-left:auto;z-index:5;
+  width:46px;height:46px;display:grid;place-items:center;
+  background:rgba(10,10,12,.7);border:1px solid var(--line-strong);border-radius:0 0 0 14px;
+  color:var(--ink);transition:color .3s,border-color .3s,background .3s;
+  -webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);
+}
+.lb-close:hover{color:var(--gold);border-color:var(--gold)}
+.lb-close svg{width:20px;height:20px}
+.lb-body{padding:clamp(22px,4vw,46px);margin-top:-46px}
+.lb-cat{font-size:.72rem;font-weight:600;letter-spacing:.24em;text-transform:uppercase;color:var(--gold)}
+.lb-title{font-family:var(--font-display);font-size:clamp(1.7rem,4.4vw,2.7rem);font-weight:800;text-transform:uppercase;letter-spacing:.03em;margin-top:10px;line-height:1.08}
+.lb-scope{color:var(--ink);font-weight:500;margin-top:8px;font-size:1.02rem}
+.lb-desc{color:var(--ink-dim);margin-top:16px;max-width:720px}
+.lb-tags{display:flex;flex-wrap:wrap;gap:9px;margin-top:20px}
+.lb-tags .chip{pointer-events:none}
+.lb-gallery{margin-top:clamp(24px,3.4vw,38px);display:grid;gap:18px}
+.lb-gallery figure{margin:0}
+.lb-gallery img{width:100%;border-radius:14px;border:1px solid var(--line);background:var(--surface-2)}
+.lb-gallery figcaption{font-size:.8rem;color:var(--ink-faint);letter-spacing:.08em;margin-top:10px;text-transform:uppercase}
+.lb-foot{
+  margin-top:clamp(26px,3.4vw,40px);padding-top:24px;border-top:1px solid var(--line);
+  display:flex;flex-wrap:wrap;gap:16px;align-items:center;justify-content:space-between;
+}
+.lb-foot .lb-cta{color:var(--ink-dim);font-size:.94rem}
+.lb-foot .lb-cta a{color:var(--gold);font-weight:600;border-bottom:1px solid rgba(201,168,106,.4);transition:border-color .3s}
+.lb-foot .lb-cta a:hover{border-color:var(--gold)}
+.lb-nav{display:flex;align-items:center;gap:14px}
+.lb-nav button{
+  display:inline-flex;align-items:center;gap:8px;padding:10px 18px;border-radius:999px;
+  border:1px solid var(--line-strong);font-size:.85rem;font-weight:600;color:var(--ink-dim);
+  transition:color .3s,border-color .3s,transform .3s var(--ease);
+}
+.lb-nav button svg{width:15px;height:15px}
+.lb-nav button:hover{color:var(--gold);border-color:var(--gold);transform:translateY(-2px)}
+.lb-count{font-family:var(--font-display);font-weight:700;font-size:.9rem;letter-spacing:.14em;color:var(--ink-faint)}
+
+/* ---------- Printable CV modal ---------- */
+.modal{position:fixed;inset:0;z-index:230;display:none;align-items:flex-start;justify-content:center;padding:clamp(10px,3vw,40px)}
+.modal.open{display:flex}
+.modal-backdrop{position:absolute;inset:0;background:rgba(6,6,8,.82);-webkit-backdrop-filter:blur(14px);backdrop-filter:blur(14px);animation:fadeIn .35s both}
+.cv-wrap{position:relative;z-index:2;width:min(860px,100%);max-height:100%;display:flex;flex-direction:column;animation:lbIn .45s var(--ease) both}
+.cv-toolbar{
+  display:flex;align-items:center;justify-content:space-between;gap:14px;flex-wrap:wrap;
+  padding:14px 18px;border:1px solid var(--line-strong);border-bottom:0;
+  border-radius:var(--radius) var(--radius) 0 0;background:var(--surface-2);
+}
+.cv-toolbar span{font-size:.8rem;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:var(--gold)}
+.cv-toolbar-actions{display:flex;gap:10px;flex-wrap:wrap}
+.cv-btn{display:inline-flex;align-items:center;gap:8px;padding:10px 18px;border-radius:999px;font-size:.85rem;font-weight:600;border:1px solid var(--line-strong);color:var(--ink);transition:color .3s,border-color .3s,background .3s}
+.cv-btn svg{width:15px;height:15px}
+.cv-btn.primary{background:var(--gold);border-color:var(--gold);color:#16100A}
+.cv-btn.primary:hover{background:var(--gold-bright);border-color:var(--gold-bright)}
+.cv-btn:not(.primary):hover{border-color:var(--gold);color:var(--gold)}
+.cv-scroll{overflow-y:auto;border:1px solid var(--line-strong);border-radius:0 0 var(--radius) var(--radius);background:#FDFDFC}
+.cv-paper{background:#FDFDFC;color:#17171A;padding:clamp(26px,4.5vw,52px);font-size:.95rem;line-height:1.62}
+.cv-paper .cv-name{font-family:var(--font-display);font-weight:800;font-size:clamp(1.5rem,3.6vw,2.1rem);letter-spacing:.02em;text-transform:uppercase;color:#101014}
+.cv-paper .cv-role{color:#B08F52;font-weight:700;letter-spacing:.12em;text-transform:uppercase;font-size:clamp(.8rem,1.6vw,.95rem);margin-top:6px}
+.cv-paper .cv-contact{display:flex;flex-wrap:wrap;gap:6px 14px;color:#4A4A52;font-size:.86rem;margin-top:12px;padding-bottom:16px;border-bottom:2px solid #101014}
+.cv-paper h2{font-size:.92rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:#101014;margin:26px 0 12px;padding-bottom:7px;border-bottom:1px solid #C9C9CF}
+.cv-paper p{color:#33333A}
+.cv-paper .cv-job{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;margin-bottom:10px}
+.cv-paper .cv-job b{color:#101014}
+.cv-paper .cv-job i{font-style:normal;color:#B08F52;font-weight:600;font-size:.86rem}
+.cv-paper ul{list-style:none}
+.cv-paper li{position:relative;padding-left:20px;margin-bottom:9px;color:#33333A}
+.cv-paper li::before{content:"";position:absolute;left:2px;top:.62em;width:6px;height:6px;background:#B08F52;transform:rotate(45deg)}
+.cv-paper table{width:100%;border-collapse:collapse;font-size:.9rem}
+.cv-paper th{text-align:left;background:#F1F0EC;color:#101014;padding:10px 14px;border:1px solid #DDDCE0;font-size:.86rem;letter-spacing:.03em}
+.cv-paper td{padding:10px 14px;border:1px solid #DDDCE0;color:#33333A;vertical-align:top}
+.cv-paper td:first-child{font-weight:700;color:#101014;white-space:nowrap}
+.cv-table-wrap{overflow-x:auto}
+.cv-paper .cv-langs b{color:#101014}
+.cv-foot{margin-top:30px;padding-top:14px;border-top:1px solid #C9C9CF;display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap;color:#8A8A92;font-size:.8rem}
+
+/* ---------- Print: only the CV sheet ---------- */
+@media print{
+  @page{margin:10mm}
+  body{background:#fff}
+  body::after,.scroll-progress,.navbar,.mobile-menu,.lightbox,.back-top{display:none!important}
+  body.cv-open #page{display:none!important}
+  #cvModal{position:static;display:block!important;padding:0}
+  #cvModal .modal-backdrop{display:none!important}
+  #cvModal .cv-wrap{width:100%;max-height:none;animation:none}
+  #cvModal .cv-toolbar{display:none!important}
+  #cvModal .cv-scroll{overflow:visible;border:0;border-radius:0}
+  .cv-paper{padding:0;font-size:.76rem;line-height:1.42}
+  .cv-paper .cv-name{font-size:1.32rem;margin-top:-2px}
+  .cv-paper .cv-role{font-size:.74rem;margin-top:4px;letter-spacing:.1em}
+  .cv-paper .cv-contact{margin-top:7px;padding-bottom:8px;font-size:.72rem;gap:4px 12px}
+  .cv-paper h2{font-size:.76rem;margin:11px 0 6px;padding-bottom:4px}
+  .cv-paper p{margin:0}
+  .cv-paper li{margin-bottom:4px;padding-left:15px}
+  .cv-paper ul{margin-bottom:2px}
+  .cv-paper table{font-size:.74rem}
+  .cv-paper th,.cv-paper td{padding:4px 8px}
+  .cv-paper td:first-child{white-space:normal;width:22%}
+  .cv-paper .cv-job{margin-bottom:5px}
+  .cv-paper .cv-langs{font-size:.76rem}
+  .cv-foot{margin-top:10px;padding-top:7px;font-size:.68rem}
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width:1024px){
+  .about-grid{grid-template-columns:1fr}
+  .b-cell.wide,.b-cell.narrow{grid-column:span 12}
+}
+@media (max-width:880px){
+  .nav-links,.navbar .nav-cta{display:none}
+  .nav-toggle{display:block}
+  .contact-grid{grid-template-columns:1fr}
+}
+@media (max-width:640px){
+  html{scroll-padding-top:calc(var(--nav-h) + 8px)}
+  .hero{padding-top:calc(var(--nav-h) + 12px)}
+  .metrics{gap:18px}
+  .metric{width:100%}
+  .filter-bar{flex-wrap:nowrap;overflow-x:auto;padding-bottom:8px;-webkit-overflow-scrolling:touch;scrollbar-width:none}
+  .filter-bar::-webkit-scrollbar{display:none}
+  .filter-btn{white-space:nowrap;flex:none}
+  .scroll-hint{display:none}
+  .lb-foot{flex-direction:column;align-items:flex-start}
+}
+</style>
+<noscript><style>.reveal{opacity:1;transform:none}</style></noscript>
+</head>
+<body>
+<a class="skip-link" href="#works">Skip to portfolio</a>
+
+<!-- SVG icon sprite -->
+<svg style="display:none" aria-hidden="true" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <symbol id="i-layers" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2 2 7l10 5 10-5-10-5z"/><path d="m2 17 10 5 10-5"/><path d="m2 12 10 5 10-5"/></symbol>
+    <symbol id="i-box" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16Z"/><path d="m3.3 7 8.7 5 8.7-5"/><path d="M12 22V12"/></symbol>
+    <symbol id="i-monitor" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></symbol>
+    <symbol id="i-spark" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l1.9 5.8a2 2 0 0 0 1.3 1.3L21 12l-5.8 1.9a2 2 0 0 0-1.3 1.3L12 21l-1.9-5.8a2 2 0 0 0-1.3-1.3L3 12l5.8-1.9a2 2 0 0 0 1.3-1.3L12 3z"/></symbol>
+    <symbol id="i-phone" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></symbol>
+    <symbol id="i-mail" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></symbol>
+    <symbol id="i-chat" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.5 8.5 0 0 1-12.4 7.5L3 21l2-5.4A8.5 8.5 0 1 1 21 11.5z"/></symbol>
+    <symbol id="i-folder" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 20h16a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2h-7.9l-2-2H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2z"/></symbol>
+    <symbol id="i-award" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="6"/><path d="M15.48 12.89 17 22l-5-3-5 3 1.52-9.11"/></symbol>
+    <symbol id="i-globe" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/><path d="M2 12h20"/></symbol>
+    <symbol id="i-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7"/><path d="M7 7h10v10"/></symbol>
+    <symbol id="i-x" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6 6 18M6 6l12 12"/></symbol>
+    <symbol id="i-print" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9V2h12v7"/><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/><rect x="6" y="14" width="12" height="8"/></symbol>
+    <symbol id="i-chev-l" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m15 18-6-6 6-6"/></symbol>
+    <symbol id="i-chev-r" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></symbol>
+    <symbol id="i-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></symbol>
+    <symbol id="i-up" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19V5"/><path d="m5 12 7-7 7 7"/></symbol>
+    <symbol id="i-user" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 3.6-6.5 8-6.5s8 2.5 8 6.5"/></symbol>
+    <symbol id="i-pin" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12S4 16 4 10a8 8 0 0 1 16 0z"/><circle cx="12" cy="10" r="3"/></symbol>
+  </defs>
+</svg>
+
+<div id="page">
+
+  <div class="scroll-progress" aria-hidden="true"><i id="progressBar"></i></div>
+
+  <!-- ================= NAVBAR ================= -->
+  <header class="navbar" id="navbar">
+    <div class="container nav-inner">
+      <a class="brand" href="#top" aria-label="Mahmoud — home">MAHMOUD<span class="dot">.</span></a>
+      <nav class="nav-links" id="navLinks" aria-label="Primary">
+        <a href="#about">About</a>
+        <a href="#works">Selected Works</a>
+        <a href="#expertise">Expertise</a>
+        <a href="#credentials">Credentials</a>
+        <a href="#contact">Contact</a>
+      </nav>
+      <a href="#contact" class="btn btn-gold nav-cta">Hire Me</a>
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="mobileMenu">
+        <span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <nav class="mobile-menu" id="mobileMenu" aria-label="Mobile">
+    <a href="#about">About</a>
+    <a href="#works">Selected Works</a>
+    <a href="#expertise">Expertise</a>
+    <a href="#credentials">Credentials</a>
+    <a href="#contact">Contact</a>
+    <a href="#contact" class="btn btn-gold">Hire Me</a>
+  </nav>
+
+  <main id="top">
+
+    <!-- ================= HERO ================= -->
+    <section class="hero" id="hero">
+      <div class="container hero-inner">
+        <p class="eyebrow hero-eyebrow reveal">Brand Identity Portfolio — Egypt · Working Worldwide</p>
+        <h1 class="hero-name">
+          <span class="line reveal" style="--d:.05s">Mahmoud</span>
+          <span class="line gold-grad reveal" style="--d:.14s">Al-Husseini</span>
+          <span class="line outline reveal" style="--d:.23s">Kamel</span>
+        </h1>
+        <p class="hero-role reveal" style="--d:.32s">Brand Identity Designer &amp; Visual Identity Specialist</p>
+        <p class="hero-tagline reveal" style="--d:.4s"><q>Crafting cohesive, strategic, and memorable visual identities from concept to final execution—combining agency-level design fundamentals with modern generative AI workflows.</q></p>
+        <div class="hero-actions reveal" style="--d:.48s">
+          <a href="#works" class="btn btn-gold">Explore Portfolio <svg aria-hidden="true"><use href="#i-arrow"/></svg></a>
+          <button type="button" class="btn btn-ghost" id="openCv"><svg aria-hidden="true"><use href="#i-print"/></svg> View Printable CV</button>
+        </div>
+        <div class="metrics reveal" style="--d:.56s">
+          <div class="metric">
+            <span class="m-ico"><svg aria-hidden="true"><use href="#i-layers"/></svg></span>
+            <div><b><span id="statNum" data-target="15">0</span>+ Complete Brand Systems</b><span>Delivered end-to-end</span></div>
+          </div>
+          <div class="metric">
+            <span class="m-ico"><svg aria-hidden="true"><use href="#i-monitor"/></svg></span>
+            <div><b>Adobe Creative Suite Expert</b><span>Illustrator · Photoshop · InDesign</span></div>
+          </div>
+          <div class="metric">
+            <span class="m-ico"><svg aria-hidden="true"><use href="#i-spark"/></svg></span>
+            <div><b>Generative AI Workflow</b><span>Concept ideation &amp; storytelling</span></div>
+          </div>
+        </div>
+      </div>
+      <div class="scroll-hint" aria-hidden="true">Scroll<i></i></div>
+    </section>
+
+    <!-- ================= BRAND MARQUEE ================= -->
+    <div class="marquee" aria-hidden="true">
+      <div class="marquee-track">
+        <span class="mq-item">VM</span><span class="mq-dot"></span>
+        <span class="mq-item">Noire</span><span class="mq-dot"></span>
+        <span class="mq-item">Elora</span><span class="mq-dot"></span>
+        <span class="mq-item">Soie Shine</span><span class="mq-dot"></span>
+        <span class="mq-item">Auren Capital</span><span class="mq-dot"></span>
+        <span class="mq-item">Mono</span><span class="mq-dot"></span>
+        <span class="mq-item">Klyro</span><span class="mq-dot"></span>
+        <span class="mq-item">Kora</span><span class="mq-dot"></span>
+        <span class="mq-item">VM</span><span class="mq-dot"></span>
+        <span class="mq-item">Noire</span><span class="mq-dot"></span>
+        <span class="mq-item">Elora</span><span class="mq-dot"></span>
+        <span class="mq-item">Soie Shine</span><span class="mq-dot"></span>
+        <span class="mq-item">Auren Capital</span><span class="mq-dot"></span>
+        <span class="mq-item">Mono</span><span class="mq-dot"></span>
+        <span class="mq-item">Klyro</span><span class="mq-dot"></span>
+        <span class="mq-item">Kora</span><span class="mq-dot"></span>
+      </div>
+    </div>
+
+    <!-- ================= ABOUT ================= -->
+    <section id="about" aria-labelledby="about-title">
+      <div class="container">
+        <div class="sec-head reveal">
+          <p class="eyebrow">About</p>
+          <h2 class="sec-title" id="about-title">Design with <span class="gold-grad">Strategy</span><br>Behind Every Mark</h2>
+        </div>
+        <div class="about-grid">
+          <aside class="facts-card reveal">
+            <h3><svg aria-hidden="true"><use href="#i-user"/></svg> Designer Profile</h3>
+            <dl>
+              <div class="fact"><dt>Name</dt><dd>Mahmoud Al-Husseini Kamel</dd></div>
+              <div class="fact"><dt>Discipline</dt><dd>Brand &amp; Visual Identity Design</dd></div>
+              <div class="fact"><dt>Based in</dt><dd>Egypt — Remote Worldwide</dd></div>
+              <div class="fact"><dt>Practice</dt><dd>Freelance &amp; Conceptual Case Studies</dd></div>
+              <div class="fact"><dt>Platforms</dt><dd>Behance · Upwork · Fiverr</dd></div>
+              <div class="fact"><dt>Toolset</dt><dd>Adobe Illustrator, Photoshop, InDesign</dd></div>
+            </dl>
+          </aside>
+          <div class="about-copy reveal" style="--d:.12s">
+            <p class="lead">Results-driven <strong>Brand Identity Designer</strong> specializing in crafting cohesive, strategic, and memorable visual identities from concept to final execution.</p>
+            <p>Experienced in developing <strong>15+ comprehensive brand projects</strong>—including custom logo architecture, packaging design, print collateral, and photorealistic mockups—tailored to elevate brand positioning and commercial appeal. Every system is built on rigorous agency standards: brand discovery, moodboards, scalable logo architecture, and clear visual guidelines that a brand can actually grow with.</p>
+            <p>What sets the practice apart is the combination of strong classical design fundamentals with <strong>modern generative AI workflows</strong>—used for concept ideation, visual storytelling, and structured case-study presentation—delivering high-impact branding solutions for global clients and freelance marketplaces.</p>
+            <ul class="about-list">
+              <li><svg aria-hidden="true"><use href="#i-check"/></svg><span><b>End-to-end visual identity systems</b> — from discovery and moodboards to scalable logo systems and guidelines.</span></li>
+              <li><svg aria-hidden="true"><use href="#i-check"/></svg><span><b>Packaging &amp; print collateral</b> — stationery and print-ready brand touchpoints that turn strategy into tangible experiences.</span></li>
+              <li><svg aria-hidden="true"><use href="#i-check"/></svg><span><b>Case-study presentation</b> — structured Behance case studies demonstrating grid construction, typography hierarchy, and color psychology.</span></li>
+              <li><svg aria-hidden="true"><use href="#i-check"/></svg><span><b>Client collaboration &amp; freelance readiness</b> — direct commissions with clear communication and structured file delivery.</span></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= SELECTED WORKS ================= -->
+    <section class="works" id="works" aria-labelledby="works-title">
+      <div class="container">
+        <div class="sec-head reveal">
+          <p class="eyebrow">Selected Works</p>
+          <h2 class="sec-title" id="works-title">Featured <span class="gold-grad">Brand Projects</span></h2>
+          <p class="sec-sub">Eight brand systems across luxury, fashion, corporate and lifestyle sectors. Click any project to open the full case-study view with gallery imagery and project details.</p>
+        </div>
+
+        <div class="filter-bar reveal" id="filterBar" role="tablist" aria-label="Filter projects by category">
+          <button class="filter-btn is-active" data-filter="all" aria-pressed="true">All</button>
+          <button class="filter-btn" data-filter="luxury" aria-pressed="false">Luxury &amp; Fragrance</button>
+          <button class="filter-btn" data-filter="fashion" aria-pressed="false">Fashion &amp; Apparel</button>
+          <button class="filter-btn" data-filter="realestate" aria-pressed="false">Real Estate &amp; Corporate</button>
+          <button class="filter-btn" data-filter="lifestyle" aria-pressed="false">Lifestyle &amp; Tech</button>
+        </div>
+
+        <div class="works-grid" id="projectGrid">
+          <article class="project-card reveal" data-category="fashion" data-index="0" tabindex="0" role="button" aria-label="Open case study: VM, luxury and sportswear brand identity">
+            <div class="project-media">
+              <span class="project-num">01</span>
+              <img src="https://i.postimg.cc/d3KpCngS/Gemini-Generated-Image-milss6milss6mils.jpg" alt="VM — luxury sportswear brand identity, monogram artwork" loading="lazy">
+              <span class="project-view">View Case Study <svg aria-hidden="true"><use href="#i-arrow"/></svg></span>
+            </div>
+            <div class="project-info">
+              <span class="project-cat">Fashion &amp; Apparel</span>
+              <h3>VM</h3>
+              <p>Luxury &amp; Sportswear Brand Identity</p>
+            </div>
+          </article>
+
+          <article class="project-card reveal" data-category="luxury" data-index="1" tabindex="0" role="button" aria-label="Open case study: NOIRE, luxury bag and brand identity" style="--d:.08s">
+            <div class="project-media">
+              <span class="project-num">02</span>
+              <img src="https://i.postimg.cc/7hydzXjX/Dag-A.jpg" alt="NOIRE — luxury bag brand identity, dark monochrome artwork" loading="lazy">
+              <span class="project-view">View Case Study <svg aria-hidden="true"><use href="#i-arrow"/></svg></span>
+            </div>
+            <div class="project-info">
+              <span class="project-cat">Luxury &amp; Fragrance</span>
+              <h3>NOIRE</h3>
+              <p>Luxury Bag &amp; Brand Identity</p>
+            </div>
+          </article>
+
+          <article class="project-card reveal" data-category="luxury" data-index="2" tabindex="0" role="button" aria-label="Open case study: ELORA, luxury fragrance packaging and identity" style="--d:.05s">
+            <div class="project-media">
+              <span class="project-num">03</span>
+              <img src="https://i.postimg.cc/kXqLX1Q7/Elora-%CA%BFbwh.jpg" alt="ELORA — luxury fragrance packaging and identity design" loading="lazy">
+              <span class="project-view">View Case Study <svg aria-hidden="true"><use href="#i-arrow"/></svg></span>
+            </div>
+            <div class="project-info">
+              <span class="project-cat">Luxury &amp; Fragrance</span>
+              <h3>ELORA</h3>
+              <p>Luxury Fragrance Packaging &amp; Identity</p>
+            </div>
+          </article>
+
+          <article class="project-card reveal" data-category="fashion" data-index="3" tabindex="0" role="button" aria-label="Open case study: Soie Shine, luxury footwear and packaging identity" style="--d:.13s">
+            <div class="project-media">
+              <span class="project-num">04</span>
+              <img src="https://i.postimg.cc/RZ08wWpk/Soie-Shine-(5).jpg" alt="Soie Shine — luxury footwear packaging identity" loading="lazy">
+              <span class="project-view">View Case Study <svg aria-hidden="true"><use href="#i-arrow"/></svg></span>
+            </div>
+            <div class="project-info">
+              <span class="project-cat">Fashion &amp; Apparel</span>
+              <h3>SOIE SHINE</h3>
+              <p>Luxury Footwear &amp; Packaging Identity</p>
+            </div>
+          </article>
+
+          <article class="project-card reveal" data-category="realestate" data-index="4" tabindex="0" role="button" aria-label="Open case study: AUREN CAPITAL, corporate and real estate identity" style="--d:.05s">
+            <div class="project-media">
+              <span class="project-num">05</span>
+              <img src="https://i.postimg.cc/TPFZdT9Z/AUREN-CAPITAL-i.jpg" alt="AUREN CAPITAL — corporate and real estate identity design" loading="lazy">
+              <span class="project-view">View Case Study <svg aria-hidden="true"><use href="#i-arrow"/></svg></span>
+            </div>
+            <div class="project-info">
+              <span class="project-cat">Real Estate &amp; Corporate</span>
+              <h3>AUREN CAPITAL</h3>
+              <p>Corporate &amp; Real Estate Identity</p>
+            </div>
+          </article>
+
+          <article class="project-card reveal" data-category="lifestyle" data-index="5" tabindex="0" role="button" aria-label="Open case study: MONO, minimalist cafe and lifestyle identity" style="--d:.13s">
+            <div class="project-media">
+              <span class="project-num">06</span>
+              <img src="https://i.postimg.cc/xTnBTxvf/Gemini-Generated-Image-tnkpzetnkpzetnkp.jpg" alt="MONO — minimalist cafe and lifestyle brand identity" loading="lazy">
+              <span class="project-view">View Case Study <svg aria-hidden="true"><use href="#i-arrow"/></svg></span>
+            </div>
+            <div class="project-info">
+              <span class="project-cat">Lifestyle &amp; Tech</span>
+              <h3>MONO</h3>
+              <p>Minimalist Cafe &amp; Lifestyle Identity</p>
+            </div>
+          </article>
+
+          <article class="project-card reveal" data-category="lifestyle" data-index="6" tabindex="0" role="button" aria-label="Open case study: KLYRO, modern tech logo suite and identity" style="--d:.05s">
+            <div class="project-media">
+              <span class="project-num">07</span>
+              <img src="https://i.postimg.cc/9FCsF8d9/KLYRO-logo-Ai-ai-5.jpg" alt="KLYRO — modern tech logo suite and identity design" loading="lazy">
+              <span class="project-view">View Case Study <svg aria-hidden="true"><use href="#i-arrow"/></svg></span>
+            </div>
+            <div class="project-info">
+              <span class="project-cat">Lifestyle &amp; Tech</span>
+              <h3>KLYRO</h3>
+              <p>Modern Tech Logo Suite &amp; Identity</p>
+            </div>
+          </article>
+
+          <article class="project-card reveal" data-category="fashion" data-index="7" tabindex="0" role="button" aria-label="Open case study: KORA, apparel and lifestyle visual identity" style="--d:.13s">
+            <div class="project-media">
+              <span class="project-num">08</span>
+              <img src="https://i.postimg.cc/t4mck9Ld/KORA-teshert.jpg" alt="KORA — apparel and lifestyle visual identity, t-shirt design" loading="lazy">
+              <span class="project-view">View Case Study <svg aria-hidden="true"><use href="#i-arrow"/></svg></span>
+            </div>
+            <div class="project-info">
+              <span class="project-cat">Fashion &amp; Apparel</span>
+              <h3>KORA</h3>
+              <p>Apparel &amp; Lifestyle Visual Identity</p>
+            </div>
+          </article>
+        </div>
+
+        <div class="works-more reveal">
+          <a class="btn btn-ghost" href="https://www.behance.net/mahmoudelhosiny4" target="_blank" rel="noopener noreferrer">Explore the Full 15+ Brand Archive <svg aria-hidden="true"><use href="#i-arrow"/></svg></a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= EXPERTISE (BENTO) ================= -->
+    <section id="expertise" aria-labelledby="expertise-title">
+      <div class="container">
+        <div class="sec-head reveal">
+          <p class="eyebrow">Expertise</p>
+          <h2 class="sec-title" id="expertise-title">Core Competencies <span class="gold-grad">&amp; Technical Stack</span></h2>
+        </div>
+        <div class="bento">
+          <div class="b-cell wide reveal">
+            <span class="b-icon"><svg aria-hidden="true"><use href="#i-layers"/></svg></span>
+            <h3>Brand Identity</h3>
+            <p class="b-sub">The strategic core of every engagement</p>
+            <div class="chips">
+              <span class="chip">Logo Architecture</span>
+              <span class="chip">Visual Identity Systems</span>
+              <span class="chip">Brand Guidelines</span>
+              <span class="chip">Typography</span>
+              <span class="chip">Color Theory</span>
+              <span class="chip">Art Direction</span>
+            </div>
+          </div>
+          <div class="b-cell narrow reveal" style="--d:.1s">
+            <span class="b-icon"><svg aria-hidden="true"><use href="#i-box"/></svg></span>
+            <h3>Print &amp; Packaging</h3>
+            <p class="b-sub">From artwork to tangible touchpoints</p>
+            <div class="chips">
+              <span class="chip">Packaging Design</span>
+              <span class="chip">Brand Stationery</span>
+              <span class="chip">Print-Ready Production Files</span>
+              <span class="chip">Realistic Mockup Presentation</span>
+            </div>
+          </div>
+          <div class="b-cell narrow reveal">
+            <span class="b-icon"><svg aria-hidden="true"><use href="#i-monitor"/></svg></span>
+            <h3>Design Software</h3>
+            <p class="b-sub">Professional Adobe workflow</p>
+            <div class="tools">
+              <div class="tool">
+                <div class="tool-top"><b>Adobe Illustrator</b><em>Advanced</em></div>
+                <div class="meter"><i style="--w:92%"></i></div>
+              </div>
+              <div class="tool">
+                <div class="tool-top"><b>Adobe Photoshop</b><em>Advanced</em></div>
+                <div class="meter"><i style="--w:88%"></i></div>
+              </div>
+              <div class="tool">
+                <div class="tool-top"><b>Adobe InDesign</b><em>Working Knowledge</em></div>
+                <div class="meter"><i style="--w:62%"></i></div>
+              </div>
+            </div>
+          </div>
+          <div class="b-cell wide ai reveal" style="--d:.1s">
+            <span class="b-icon"><svg aria-hidden="true"><use href="#i-spark"/></svg></span>
+            <h3>Modern Workflow</h3>
+            <p class="b-sub">Classical fundamentals, accelerated by AI</p>
+            <p>Generative AI is woven into the front end of the process—expanding concept territories, stress-testing directions, and compressing iteration time—while every final deliverable remains hand-crafted, print-ready, and built to agency standards.</p>
+            <div class="chips">
+              <span class="chip">Generative AI for Concept Ideation</span>
+              <span class="chip">Visual Storytelling</span>
+              <span class="chip">Case Study Structuring</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= CREDENTIALS ================= -->
+    <section id="credentials" aria-labelledby="credentials-title">
+      <div class="container">
+        <div class="sec-head reveal">
+          <p class="eyebrow">Credentials</p>
+          <h2 class="sec-title" id="credentials-title">Certifications, Training <span class="gold-grad">&amp; Languages</span></h2>
+        </div>
+        <div class="cred-grid">
+          <div class="cred-card reveal">
+            <span class="cred-ico"><svg aria-hidden="true"><use href="#i-award"/></svg></span>
+            <h3>Accredited Graphic Design &amp; Branding Certification</h3>
+            <p class="issuer">Certified Training Program — Cairo</p>
+            <p>Formal accreditation covering graphic design and branding fundamentals, applied to real commercial briefs.</p>
+          </div>
+          <div class="cred-card reveal" style="--d:.1s">
+            <span class="cred-ico"><svg aria-hidden="true"><use href="#i-award"/></svg></span>
+            <h3>Advanced Brand Identity &amp; Logo Design Specializations</h3>
+            <p class="issuer">Udemy — 2 Courses</p>
+            <p>Advanced specializations in logo construction and identity systems, deepening craft across mark-making and guidelines.</p>
+          </div>
+          <div class="cred-card reveal" style="--d:.2s">
+            <span class="cred-ico"><svg aria-hidden="true"><use href="#i-spark"/></svg></span>
+            <h3>Generative AI &amp; Artificial Intelligence Foundations</h3>
+            <p class="issuer">DataCamp</p>
+            <p>Foundations of generative AI that power the modern concept-ideation and visual-storytelling workflow.</p>
+          </div>
+          <div class="lang-card reveal">
+            <span class="lang-ico"><svg aria-hidden="true"><use href="#i-globe"/></svg></span>
+            <div class="lang-item">
+              <b>Arabic — Native</b>
+              <span>Mother-tongue fluency for regional brands and markets.</span>
+            </div>
+            <span class="lang-sep" aria-hidden="true"></span>
+            <div class="lang-item">
+              <b>English — Professional Working Proficiency</b>
+              <span>Design &amp; client communication with global customers.</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= CONTACT ================= -->
+    <section id="contact" aria-labelledby="contact-title">
+      <div class="container contact-grid">
+        <div class="contact-copy reveal">
+          <p class="eyebrow">Contact &amp; Archive</p>
+          <h2 class="sec-title" id="contact-title">Let&rsquo;s Build a Brand <span class="gold-grad">Worth Remembering</span></h2>
+          <p class="contact-note">Whether it&rsquo;s a complete identity system, packaging suite, or a logo refresh with strategic depth—send the brief and receive a structured proposal with timeline and deliverables.</p>
+          <span class="avail"><i aria-hidden="true"></i> Available for new commissions</span>
+          <div class="contact-actions">
+            <a class="btn btn-gold" href="mailto:yt.mahmoud.elhosiny@gmail.com?subject=New%20Brand%20Identity%20Project">Start a Project <svg aria-hidden="true"><use href="#i-arrow"/></svg></a>
+          </div>
+        </div>
+        <div class="contact-cards reveal" style="--d:.12s">
+          <a class="contact-card" href="tel:+201223530084">
+            <span class="c-ico"><svg aria-hidden="true"><use href="#i-phone"/></svg></span>
+            <span class="c-body"><span>Phone</span><b>+20 122 353 0084</b></span>
+            <span class="c-arrow"><svg aria-hidden="true"><use href="#i-arrow"/></svg></span>
+          </a>
+          <a class="contact-card" href="https://wa.me/201223530084" target="_blank" rel="noopener noreferrer">
+            <span class="c-ico"><svg aria-hidden="true"><use href="#i-chat"/></svg></span>
+            <span class="c-body"><span>WhatsApp</span><b>+20 122 353 0084 — Instant Message</b></span>
+            <span class="c-arrow"><svg aria-hidden="true"><use href="#i-arrow"/></svg></span>
+          </a>
+          <a class="contact-card" href="mailto:yt.mahmoud.elhosiny@gmail.com">
+            <span class="c-ico"><svg aria-hidden="true"><use href="#i-mail"/></svg></span>
+            <span class="c-body"><span>Email</span><b>yt.mahmoud.elhosiny@gmail.com</b></span>
+            <span class="c-arrow"><svg aria-hidden="true"><use href="#i-arrow"/></svg></span>
+          </a>
+          <a class="contact-card" href="https://www.behance.net/mahmoudelhosiny4" target="_blank" rel="noopener noreferrer">
+            <span class="c-ico"><span class="be">Bē</span></span>
+            <span class="c-body"><span>Behance Portfolio</span><b>behance.net/mahmoudelhosiny4</b></span>
+            <span class="c-arrow"><svg aria-hidden="true"><use href="#i-arrow"/></svg></span>
+          </a>
+          <a class="contact-card" href="https://drive.google.com/drive/folders/13Xg6sKQ-SIL0O3rwP_gegtT3hPzToPkd" target="_blank" rel="noopener noreferrer">
+            <span class="c-ico"><svg aria-hidden="true"><use href="#i-folder"/></svg></span>
+            <span class="c-body"><span>Full Brand Archive</span><b>15+ Brand Systems — Google Drive</b></span>
+            <span class="c-arrow"><svg aria-hidden="true"><use href="#i-arrow"/></svg></span>
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ================= FOOTER ================= -->
+  <footer class="footer">
+    <div class="container footer-inner">
+      <a class="brand" href="#top" aria-label="Back to top">MAHMOUD<span class="dot">.</span></a>
+      <nav class="footer-nav" aria-label="Footer">
+        <a href="#about">About</a>
+        <a href="#works">Works</a>
+        <a href="#expertise">Expertise</a>
+        <a href="#credentials">Credentials</a>
+        <a href="#contact">Contact</a>
+      </nav>
+      <small>
+        <span>&copy; <span id="year">2026</span> Mahmoud Al-Husseini Kamel — Brand Identity Designer &amp; Visual Identity Specialist. Egypt.</span>
+        <a class="back-top" href="#top">Back to top <svg aria-hidden="true"><use href="#i-up"/></svg></a>
+      </small>
+    </div>
+  </footer>
+
+</div><!-- /#page -->
+
+<!-- ================= CASE-STUDY LIGHTBOX ================= -->
+<div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-hidden="true" aria-labelledby="lbTitle">
+  <div class="lb-backdrop" data-lb-close></div>
+  <div class="lb-panel">
+    <button class="lb-close" type="button" data-lb-close aria-label="Close case study"><svg aria-hidden="true"><use href="#i-x"/></svg></button>
+    <div class="lb-body">
+      <span class="lb-cat" id="lbCat">Category</span>
+      <h3 class="lb-title" id="lbTitle">Project</h3>
+      <p class="lb-scope" id="lbScope">Scope</p>
+      <p class="lb-desc" id="lbDesc"></p>
+      <div class="lb-tags" id="lbTags"></div>
+      <div class="lb-gallery" id="lbGallery"></div>
+      <div class="lb-foot">
+        <p class="lb-cta">Full case study on <a href="https://www.behance.net/mahmoudelhosiny4" target="_blank" rel="noopener noreferrer">Behance</a> — plus the complete 15+ brand archive.</p>
+        <div class="lb-nav">
+          <button type="button" id="lbPrev"><svg aria-hidden="true"><use href="#i-chev-l"/></svg> Prev</button>
+          <span class="lb-count" id="lbCount">01 / 08</span>
+          <button type="button" id="lbNext">Next <svg aria-hidden="true"><use href="#i-chev-r"/></svg></button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ================= PRINTABLE CV MODAL ================= -->
+<div class="modal" id="cvModal" role="dialog" aria-modal="true" aria-hidden="true" aria-label="Printable CV">
+  <div class="modal-backdrop" data-cv-close></div>
+  <div class="cv-wrap">
+    <div class="cv-toolbar">
+      <span>Printable CV — Mahmoud Al-Husseini Kamel</span>
+      <div class="cv-toolbar-actions">
+        <button class="cv-btn primary" type="button" id="cvPrintBtn"><svg aria-hidden="true"><use href="#i-print"/></svg> Print / Save as PDF</button>
+        <button class="cv-btn" type="button" data-cv-close><svg aria-hidden="true"><use href="#i-x"/></svg> Close</button>
+      </div>
+    </div>
+    <div class="cv-scroll">
+      <div class="cv-paper">
+        <div class="cv-name">Mahmoud Al-Husseini Kamel</div>
+        <div class="cv-role">Brand Identity Designer &amp; Visual Identity Specialist</div>
+        <div class="cv-contact">
+          <span>Egypt</span><span>|</span>
+          <span>+20 122 353 0084</span><span>|</span>
+          <span>yt.mahmoud.elhosiny@gmail.com</span><span>|</span>
+          <span>Portfolio: behance.net/mahmoudelhosiny4</span>
+        </div>
+
+        <h2>Professional Summary</h2>
+        <p>Results-driven <strong>Brand Identity Designer</strong> specializing in crafting cohesive, strategic, and memorable visual identities from concept to final execution. Experienced in developing <strong>15+ comprehensive brand projects</strong>—including custom logo architecture, packaging design, print collateral, and photorealistic mockups—tailored to elevate brand positioning and commercial appeal. Combines strong visual design fundamentals with modern generative AI workflows to deliver high-impact branding solutions for global clients and freelance marketplaces.</p>
+
+        <h2>Experience &amp; Selected Brand Projects</h2>
+        <div class="cv-job">
+          <b>Brand Identity Designer — Freelance &amp; Conceptual Case Studies</b>
+          <i>Direct Client Network &amp; Global Platforms</i>
+        </div>
+        <ul>
+          <li><strong>End-to-End Visual Identity Systems:</strong> Designed and executed 15+ complete brand identity projects across diverse commercial sectors, applying rigorous agency standards—from brand discovery and moodboards to scalable logo systems and visual guidelines.</li>
+          <li><strong>Packaging &amp; Print Collateral:</strong> Developed cohesive packaging designs, stationery, and print-ready brand touchpoints that translate brand strategy into tangible customer experiences.</li>
+          <li><strong>Portfolio &amp; Case Study Presentation:</strong> Engineered structured Behance case studies demonstrating grid construction, typography hierarchy, color psychology, and realistic commercial mockups.</li>
+          <li><strong>Client Collaboration &amp; Freelance Readiness:</strong> Executed direct commission projects through professional networks while maintaining active profiles on Upwork and Fiverr, ensuring clear client communication and structured file delivery.</li>
+        </ul>
+
+        <h2>Core Competencies &amp; Technical Stack</h2>
+        <div class="cv-table-wrap">
+          <table>
+            <thead>
+              <tr><th scope="col">Discipline</th><th scope="col">Capabilities &amp; Tools</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>Brand Identity</td><td>Logo Architecture, Visual Identity Systems, Brand Guidelines, Typography, Color Theory, Art Direction</td></tr>
+              <tr><td>Print &amp; Packaging</td><td>Packaging Design, Brand Stationery, Print-Ready Production Files, Realistic Mockup Presentation</td></tr>
+              <tr><td>Design Software</td><td>Adobe Illustrator (Advanced), Adobe Photoshop (Advanced), Adobe InDesign (Working Knowledge)</td></tr>
+              <tr><td>Modern Workflow</td><td>Generative AI for Concept Ideation, Visual Storytelling, Case Study Structuring</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <h2>Certifications &amp; Professional Training</h2>
+        <ul>
+          <li><strong>Accredited Graphic Design &amp; Branding Certification</strong> — Certified Training Program, Cairo</li>
+          <li><strong>Advanced Brand Identity &amp; Logo Design Specializations (2 Courses)</strong> — Udemy</li>
+          <li><strong>Generative AI &amp; Artificial Intelligence Foundations</strong> — DataCamp</li>
+        </ul>
+
+        <h2>Languages</h2>
+        <p class="cv-langs"><strong>Arabic:</strong> Native &nbsp;|&nbsp; <strong>English:</strong> Professional Working Proficiency (Design &amp; Client Communication)</p>
+
+        <div class="cv-foot">
+          <span>Mahmoud Al-Husseini Kamel — Brand Identity Designer</span>
+          <span>Page 1 of 1</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+<script>
+/* ============================================================
+   MAHMOUD — PORTFOLIO · Vanilla JS
+   1) Nav & scroll   2) Reveals   3) Count-up
+   4) Filtering      5) Lightbox  6) Printable CV
+   ============================================================ */
+(function () {
+  "use strict";
+
+  var $  = function (s, c) { return (c || document).querySelector(s); };
+  var $$ = function (s, c) { return Array.prototype.slice.call((c || document).querySelectorAll(s)); };
+
+  /* ---------- 1 · Footer year ---------- */
+  $("#year").textContent = new Date().getFullYear();
+
+  /* ---------- 1 · Navbar state + scroll progress ---------- */
+  var navbar = $("#navbar");
+  var progressBar = $("#progressBar");
+  var ticking = false;
+
+  function onScroll() {
+    var y = window.scrollY || window.pageYOffset;
+    navbar.classList.toggle("scrolled", y > 30);
+    var max = document.documentElement.scrollHeight - window.innerHeight;
+    progressBar.style.transform = "scaleX(" + (max > 0 ? Math.min(y / max, 1) : 0) + ")";
+    ticking = false;
+  }
+  window.addEventListener("scroll", function () {
+    if (!ticking) { ticking = true; window.requestAnimationFrame(onScroll); }
+  }, { passive: true });
+  onScroll();
+
+  /* ---------- 1 · Mobile menu ---------- */
+  var navToggle = $("#navToggle");
+  var mobileMenu = $("#mobileMenu");
+
+  function closeMenu() {
+    navToggle.classList.remove("open");
+    navToggle.setAttribute("aria-expanded", "false");
+    document.body.classList.remove("menu-open");
+  }
+  navToggle.addEventListener("click", function () {
+    var open = !document.body.classList.contains("menu-open");
+    navToggle.classList.toggle("open", open);
+    navToggle.setAttribute("aria-expanded", String(open));
+    document.body.classList.toggle("menu-open", open);
+  });
+  $$("a", mobileMenu).forEach(function (a) {
+    a.addEventListener("click", closeMenu);
+  });
+
+  /* ---------- 1 · Active nav link ---------- */
+  var linkMap = {};
+  $$("#navLinks a").forEach(function (a) {
+    var id = (a.getAttribute("href") || "").replace("#", "");
+    if (id) { linkMap[id] = a; }
+  });
+  var sectionObserver = new IntersectionObserver(function (entries) {
+    entries.forEach(function (entry) {
+      if (entry.isIntersecting) {
+        $$("#navLinks a").forEach(function (a) { a.classList.remove("active"); });
+        var link = linkMap[entry.target.id];
+        if (link) { link.classList.add("active"); }
+      }
+    });
+  }, { rootMargin: "-38% 0px -55% 0px" });
+  ["about", "works", "expertise", "credentials", "contact"].forEach(function (id) {
+    var el = document.getElementById(id);
+    if (el) { sectionObserver.observe(el); }
+  });
+
+  /* ---------- 2 · Scroll-reveal ---------- */
+  var revealObserver = new IntersectionObserver(function (entries) {
+    entries.forEach(function (entry) {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("in");
+        revealObserver.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.12, rootMargin: "0px 0px -6% 0px" });
+  $$(".reveal").forEach(function (el) { revealObserver.observe(el); });
+
+  /* ---------- 3 · Metric count-up (15+) ---------- */
+  var statNum = $("#statNum");
+  var statDone = false;
+  var statObserver = new IntersectionObserver(function (entries) {
+    entries.forEach(function (entry) {
+      if (entry.isIntersecting && !statDone) {
+        statDone = true;
+        var target = parseInt(statNum.getAttribute("data-target"), 10) || 15;
+        var t0 = null;
+        var DUR = 1300;
+        function step(ts) {
+          if (!t0) { t0 = ts; }
+          var p = Math.min((ts - t0) / DUR, 1);
+          var eased = 1 - Math.pow(1 - p, 3);
+          statNum.textContent = String(Math.round(target * eased));
+          if (p < 1) { window.requestAnimationFrame(step); }
+        }
+        window.requestAnimationFrame(step);
+        statObserver.disconnect();
+      }
+    });
+  }, { threshold: 0.4 });
+  if (statNum) { statObserver.observe(statNum); }
+
+  /* ---------- 4 · Category filtering ---------- */
+  var filterBtns = $$(".filter-btn");
+  var cards = $$(".project-card");
+  filterBtns.forEach(function (btn) {
+    btn.addEventListener("click", function () {
+      filterBtns.forEach(function (b) {
+        b.classList.toggle("is-active", b === btn);
+        b.setAttribute("aria-pressed", String(b === btn));
+      });
+      var f = btn.getAttribute("data-filter");
+      cards.forEach(function (card, i) {
+        var show = f === "all" || card.getAttribute("data-category") === f;
+        card.classList.toggle("is-hidden", !show);
+        if (show) { /* retrigger entrance animation */
+          card.style.animation = "none";
+          void card.offsetWidth;
+          card.style.animation = "";
+          card.style.animationDelay = (i % 4) * 0.05 + "s";
+        }
+      });
+    });
+  });
+
+  /* ---------- 5 · Project data (case-study lightbox) ---------- */
+  var IMG = {
+    vmCover:  "https://i.postimg.cc/d3KpCngS/Gemini-Generated-Image-milss6milss6mils.jpg",
+    vmSecond: "https://i.postimg.cc/FzQ8SG24/Gemini-Generated-Image-5fuha85fuha85fuh.jpg",
+    noire:    "https://i.postimg.cc/7hydzXjX/Dag-A.jpg",
+    elora:    "https://i.postimg.cc/kXqLX1Q7/Elora-%CA%BFbwh.jpg",
+    soie:     "https://i.postimg.cc/RZ08wWpk/Soie-Shine-(5).jpg",
+    auren:    "https://i.postimg.cc/TPFZdT9Z/AUREN-CAPITAL-i.jpg",
+    mono:     "https://i.postimg.cc/xTnBTxvf/Gemini-Generated-Image-tnkpzetnkpzetnkp.jpg",
+    klyro:    "https://i.postimg.cc/9FCsF8d9/KLYRO-logo-Ai-ai-5.jpg",
+    kora:     "https://i.postimg.cc/t4mck9Ld/KORA-teshert.jpg"
+  };
+
+  var PROJECTS = [
+    {
+      title: "VM",
+      cat: "Fashion & Apparel",
+      scope: "Luxury & Sportswear Brand Identity",
+      desc: "A bold, monogram-driven identity for a luxury sportswear label—engineered to scale from apparel tags and embroidery-ready marks to digital touchpoints. A confident typographic voice and a restrained palette keep the brand equally at home on the track and in the boutique.",
+      tags: ["Logo Architecture", "Visual Identity System", "Apparel Applications", "Brand Guidelines"],
+      gallery: [IMG.vmCover, IMG.vmSecond]
+    },
+    {
+      title: "NOIRE",
+      cat: "Luxury & Fragrance",
+      scope: "Luxury Bag & Brand Identity",
+      desc: "A moody, monochrome identity built around quiet luxury. The mark and stationery system lean on negative space, high-contrast typography, and tactile print finishes to position the bag label firmly in the premium tier.",
+      tags: ["Logo Design", "Print Stationery", "Color Psychology", "Brand Guidelines"],
+      gallery: [IMG.noire]
+    },
+    {
+      title: "ELORA",
+      cat: "Luxury & Fragrance",
+      scope: "Luxury Fragrance Packaging & Identity",
+      desc: "An olfactory-inspired identity where the packaging is the hero: bottle labels, box architecture, and a soft-gold accent system designed to feel collector-grade—on the shelf and in front of the camera alike.",
+      tags: ["Packaging Design", "Identity System", "Mockup Presentation", "Art Direction"],
+      gallery: [IMG.elora]
+    },
+    {
+      title: "SOIE SHINE",
+      cat: "Fashion & Apparel",
+      scope: "Luxury Footwear & Packaging Identity",
+      desc: "A silky, editorial identity for a footwear label—carried from logotype to the full unboxing experience. Photorealistic mockups demonstrate how the system translates from flat artwork to tangible luxury packaging.",
+      tags: ["Packaging Design", "Logotype", "Print-Ready Files", "Realistic Mockups"],
+      gallery: [IMG.soie]
+    },
+    {
+      title: "AUREN CAPITAL",
+      cat: "Real Estate & Corporate",
+      scope: "Corporate & Real Estate Identity",
+      desc: "A trust-first corporate identity for a real estate and investment brand: a precise geometric mark, a formal typographic hierarchy, and a stationery suite engineered to read as established from day one.",
+      tags: ["Corporate Identity", "Brand Architecture", "Stationery Suite", "Typography"],
+      gallery: [IMG.auren]
+    },
+    {
+      title: "MONO",
+      cat: "Lifestyle & Tech",
+      scope: "Minimalist Cafe & Lifestyle Identity",
+      desc: "One idea, executed everywhere: a minimalist cafe identity reduced to a single mark, a strict grid, and a warm-neutral palette—carried consistently across cups, menus, signage, and social templates.",
+      tags: ["Minimal Mark", "Menu & Collateral", "Art Direction", "Color Theory"],
+      gallery: [IMG.mono]
+    },
+    {
+      title: "KLYRO",
+      cat: "Lifestyle & Tech",
+      scope: "Modern Tech Logo Suite & Identity",
+      desc: "A flexible logo suite for a modern tech venture—primary mark, responsive variants, and a system built for app icons, dark-mode interfaces, and scalable brand guidelines.",
+      tags: ["Logo Suite", "Responsive Marks", "Brand Guidelines", "Visual Identity System"],
+      gallery: [IMG.klyro]
+    },
+    {
+      title: "KORA",
+      cat: "Fashion & Apparel",
+      scope: "Apparel & Lifestyle Visual Identity",
+      desc: "A confident, type-led lifestyle identity designed for garment printing—artwork engineered to survive real production, from screen-print separations to lookbook layouts.",
+      tags: ["Apparel Graphics", "Visual Identity", "Lookbook", "Typography"],
+      gallery: [IMG.kora]
+    }
+  ];
+
+  /* ---------- 5 · Lightbox engine ---------- */
+  var lightbox = $("#lightbox");
+  var lbCat = $("#lbCat"), lbTitle = $("#lbTitle"), lbScope = $("#lbScope"),
+      lbDesc = $("#lbDesc"), lbTags = $("#lbTags"), lbGallery = $("#lbGallery"),
+      lbCount = $("#lbCount"), lbPrev = $("#lbPrev"), lbNext = $("#lbNext");
+  var current = 0;
+  var lastFocused = null;
+  var lockCount = 0;
+
+  function lockScroll() {
+    lockCount++;
+    document.body.style.overflow = "hidden";
+  }
+  function unlockScroll() {
+    lockCount = Math.max(0, lockCount - 1);
+    if (lockCount === 0) { document.body.style.overflow = ""; }
+  }
+
+  function pad(n) { return String(n).padStart(2, "0"); }
+
+  function renderLightbox(i) {
+    var p = PROJECTS[i];
+    lbCat.textContent = p.cat;
+    lbTitle.textContent = p.title;
+    lbScope.textContent = p.scope;
+    lbDesc.textContent = p.desc;
+    lbTags.innerHTML = "";
+    p.tags.forEach(function (t) {
+      var chip = document.createElement("span");
+      chip.className = "chip";
+      chip.textContent = t;
+      lbTags.appendChild(chip);
+    });
+    lbGallery.innerHTML = "";
+    p.gallery.forEach(function (src, n) {
+      var fig = document.createElement("figure");
+      var img = document.createElement("img");
+      img.src = src;
+      img.alt = p.title + " — " + p.scope + " (image " + (n + 1) + " of " + p.gallery.length + ")";
+      img.loading = "lazy";
+      var cap = document.createElement("figcaption");
+      cap.textContent = n === 0 ? "Cover — brand identity presentation" : "Application view — extended identity";
+      fig.appendChild(img); fig.appendChild(cap);
+      lbGallery.appendChild(fig);
+    });
+    lbCount.textContent = pad(i + 1) + " / " + pad(PROJECTS.length);
+    current = i;
+  }
+
+  function openLightbox(i) {
+    renderLightbox(i);
+    lastFocused = document.activeElement;
+    lightbox.classList.add("open");
+    lightbox.setAttribute("aria-hidden", "false");
+    lockScroll();
+    $(".lb-close", lightbox).focus();
+    $(".lb-panel", lightbox).scrollTop = 0;
+  }
+  function closeLightbox() {
+    lightbox.classList.remove("open");
+    lightbox.setAttribute("aria-hidden", "true");
+    unlockScroll();
+    if (lastFocused && lastFocused.focus) { lastFocused.focus(); }
+  }
+  function stepLightbox(dir) {
+    renderLightbox((current + dir + PROJECTS.length) % PROJECTS.length);
+    var panel = $(".lb-panel", lightbox);
+    if (panel) { panel.scrollTop = 0; }
+  }
+
+  cards.forEach(function (card) {
+    card.addEventListener("click", function () {
+      openLightbox(parseInt(card.getAttribute("data-index"), 10));
+    });
+    card.addEventListener("keydown", function (e) {
+      if (e.key === "Enter" || e.key === " " || e.key === "Spacebar") {
+        e.preventDefault();
+        openLightbox(parseInt(card.getAttribute("data-index"), 10));
+      }
+    });
+  });
+  $$("[data-lb-close]").forEach(function (el) { el.addEventListener("click", closeLightbox); });
+  lbPrev.addEventListener("click", function () { stepLightbox(-1); });
+  lbNext.addEventListener("click", function () { stepLightbox(1); });
+
+  /* ---------- 6 · Printable CV modal ---------- */
+  var cvModal = $("#cvModal");
+
+  function openCv() {
+    lastFocused = document.activeElement;
+    cvModal.classList.add("open");
+    cvModal.setAttribute("aria-hidden", "false");
+    document.body.classList.add("cv-open");
+    lockScroll();
+    $("#cvPrintBtn").focus();
+    $(".cv-scroll", cvModal).scrollTop = 0;
+  }
+  function closeCv() {
+    cvModal.classList.remove("open");
+    cvModal.setAttribute("aria-hidden", "true");
+    document.body.classList.remove("cv-open");
+    unlockScroll();
+    if (lastFocused && lastFocused.focus) { lastFocused.focus(); }
+  }
+
+  $("#openCv").addEventListener("click", openCv);
+  $$("[data-cv-close]").forEach(function (el) { el.addEventListener("click", closeCv); });
+  $("#cvPrintBtn").addEventListener("click", function () { window.print(); });
+
+  /* ---------- Global keyboard controls ---------- */
+  document.addEventListener("keydown", function (e) {
+    if (e.key === "Escape") {
+      if (lightbox.classList.contains("open")) { closeLightbox(); }
+      else if (cvModal.classList.contains("open")) { closeCv(); }
+      else if (document.body.classList.contains("menu-open")) { closeMenu(); }
+    }
+    if (lightbox.classList.contains("open")) {
+      if (e.key === "ArrowLeft") { stepLightbox(-1); }
+      if (e.key === "ArrowRight") { stepLightbox(1); }
+    }
+  });
+})();
+</script>
+
+</body>
+</html>
